@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,6 +15,31 @@
 		751EFE6D26C6C48400EB165A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 751EFE6B26C6C48400EB165A /* LaunchScreen.storyboard */; };
 		751EFE7826C6C48500EB165A /* ZivameTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFE7726C6C48500EB165A /* ZivameTests.swift */; };
 		751EFE8326C6C48500EB165A /* ZivameUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFE8226C6C48500EB165A /* ZivameUITests.swift */; };
+		751EFE9726C6E64F00EB165A /* products.json in Resources */ = {isa = PBXBuildFile; fileRef = 751EFE9626C6E64F00EB165A /* products.json */; };
+		751EFE9C26C6ED5F00EB165A /* ListingScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFE9B26C6ED5F00EB165A /* ListingScreenViewController.swift */; };
+		751EFEA126C6ED7D00EB165A /* CartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFEA026C6ED7D00EB165A /* CartScreenViewController.swift */; };
+		751EFEA626C6EE8A00EB165A /* CheckoutScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFEA526C6EE8A00EB165A /* CheckoutScreenViewController.swift */; };
+		751EFEAB26C6F22B00EB165A /* PaymentSuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751EFEAA26C6F22B00EB165A /* PaymentSuccessViewController.swift */; };
+		752F094426C8056800D9DA90 /* UIViewController+Extensnion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F094326C8056800D9DA90 /* UIViewController+Extensnion.swift */; };
+		752F094F26C805F900D9DA90 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F094E26C805F900D9DA90 /* UIView + Extension.swift */; };
+		752F095426C80E3100D9DA90 /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F095326C80E3100D9DA90 /* Font.swift */; };
+		752F095926C816E500D9DA90 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F095826C816E500D9DA90 /* Theme.swift */; };
+		752F095E26C8232000D9DA90 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F095D26C8232000D9DA90 /* Constant.swift */; };
+		752F096326C9565400D9DA90 /* AvenirLTStd-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 752F096226C9565400D9DA90 /* AvenirLTStd-Book.ttf */; };
+		752F097426C99ADC00D9DA90 /* UIIMageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F097326C99ADC00D9DA90 /* UIIMageView + Extension.swift */; };
+		752F097D26C9FE6B00D9DA90 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F097C26C9FE6A00D9DA90 /* Reachability.swift */; };
+		752F098226CA1C0300D9DA90 /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F098126CA1C0300D9DA90 /* NoInternetViewController.swift */; };
+		7597E1F026C7906300284174 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E1EF26C7906300284174 /* Product.swift */; };
+		7597E1F826C7911700284174 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E1F726C7911700284174 /* ProductViewModel.swift */; };
+		7597E1FD26C7950F00284174 /* ListingVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E1FC26C7950F00284174 /* ListingVIewModel.swift */; };
+		7597E20226C7952200284174 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E20126C7952200284174 /* CartViewModel.swift */; };
+		7597E20726C7983800284174 /* ProductInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E20626C7983800284174 /* ProductInfoCell.swift */; };
+		7597E20C26C7987000284174 /* ProductInfoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7597E20B26C7987000284174 /* ProductInfoCell.xib */; };
+		7597E21126C799A200284174 /* ListingScreenAPIWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E21026C799A200284174 /* ListingScreenAPIWorker.swift */; };
+		7597E21626C799B200284174 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E21526C799B200284174 /* Helper.swift */; };
+		7597E21B26C7A2D300284174 /* SDwebImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E21A26C7A2D300284174 /* SDwebImageHelper.swift */; };
+		7597E22526C7AEE000284174 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E22426C7AEE000284174 /* BaseViewController.swift */; };
+		E37CFCF2DBC6DFEEF97FEC0A /* Pods_Zivame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C450007B2087AAB0833E2F /* Pods_Zivame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +60,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5B8638914AFCAD9BBEC83C54 /* Pods-Zivame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zivame.debug.xcconfig"; path = "Target Support Files/Pods-Zivame/Pods-Zivame.debug.xcconfig"; sourceTree = "<group>"; };
+		68BE6CFA92CFA5914DC2C811 /* Pods-Zivame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zivame.release.xcconfig"; path = "Target Support Files/Pods-Zivame/Pods-Zivame.release.xcconfig"; sourceTree = "<group>"; };
 		751EFE5D26C6C48200EB165A /* Zivame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zivame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751EFE6026C6C48200EB165A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		751EFE6226C6C48200EB165A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +76,32 @@
 		751EFE7E26C6C48500EB165A /* ZivameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZivameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		751EFE8226C6C48500EB165A /* ZivameUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZivameUITests.swift; sourceTree = "<group>"; };
 		751EFE8426C6C48500EB165A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751EFE9626C6E64F00EB165A /* products.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = products.json; sourceTree = "<group>"; };
+		751EFE9B26C6ED5F00EB165A /* ListingScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingScreenViewController.swift; sourceTree = "<group>"; };
+		751EFEA026C6ED7D00EB165A /* CartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartScreenViewController.swift; sourceTree = "<group>"; };
+		751EFEA526C6EE8A00EB165A /* CheckoutScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutScreenViewController.swift; sourceTree = "<group>"; };
+		751EFEAA26C6F22B00EB165A /* PaymentSuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessViewController.swift; sourceTree = "<group>"; };
+		752F094326C8056800D9DA90 /* UIViewController+Extensnion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensnion.swift"; sourceTree = "<group>"; };
+		752F094E26C805F900D9DA90 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		752F095326C80E3100D9DA90 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		752F095826C816E500D9DA90 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		752F095D26C8232000D9DA90 /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		752F096226C9565400D9DA90 /* AvenirLTStd-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "AvenirLTStd-Book.ttf"; sourceTree = "<group>"; };
+		752F097326C99ADC00D9DA90 /* UIIMageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIIMageView + Extension.swift"; sourceTree = "<group>"; };
+		752F097B26C9FE6A00D9DA90 /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		752F097C26C9FE6A00D9DA90 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		752F098126CA1C0300D9DA90 /* NoInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
+		7597E1EF26C7906300284174 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		7597E1F726C7911700284174 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		7597E1FC26C7950F00284174 /* ListingVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVIewModel.swift; sourceTree = "<group>"; };
+		7597E20126C7952200284174 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
+		7597E20626C7983800284174 /* ProductInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCell.swift; sourceTree = "<group>"; };
+		7597E20B26C7987000284174 /* ProductInfoCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductInfoCell.xib; sourceTree = "<group>"; };
+		7597E21026C799A200284174 /* ListingScreenAPIWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingScreenAPIWorker.swift; sourceTree = "<group>"; };
+		7597E21526C799B200284174 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		7597E21A26C7A2D300284174 /* SDwebImageHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDwebImageHelper.swift; sourceTree = "<group>"; };
+		7597E22426C7AEE000284174 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		C1C450007B2087AAB0833E2F /* Pods_Zivame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zivame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E37CFCF2DBC6DFEEF97FEC0A /* Pods_Zivame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +130,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		150C87D3722AE1C233CDDC33 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C1C450007B2087AAB0833E2F /* Pods_Zivame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6BFE8E31882A3A2A877A2C0B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5B8638914AFCAD9BBEC83C54 /* Pods-Zivame.debug.xcconfig */,
+				68BE6CFA92CFA5914DC2C811 /* Pods-Zivame.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		751EFE5426C6C48200EB165A = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +154,8 @@
 				751EFE7626C6C48500EB165A /* ZivameTests */,
 				751EFE8126C6C48500EB165A /* ZivameUITests */,
 				751EFE5E26C6C48200EB165A /* Products */,
+				6BFE8E31882A3A2A877A2C0B /* Pods */,
+				150C87D3722AE1C233CDDC33 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,9 +172,33 @@
 		751EFE5F26C6C48200EB165A /* Zivame */ = {
 			isa = PBXGroup;
 			children = (
+				752F097226C9999B00D9DA90 /* Utils */,
 				751EFE6026C6C48200EB165A /* AppDelegate.swift */,
 				751EFE6226C6C48200EB165A /* SceneDelegate.swift */,
 				751EFE6426C6C48200EB165A /* ViewController.swift */,
+				751EFE9B26C6ED5F00EB165A /* ListingScreenViewController.swift */,
+				752F098126CA1C0300D9DA90 /* NoInternetViewController.swift */,
+				7597E22426C7AEE000284174 /* BaseViewController.swift */,
+				752F097B26C9FE6A00D9DA90 /* Reachability.h */,
+				752F097C26C9FE6A00D9DA90 /* Reachability.swift */,
+				752F094326C8056800D9DA90 /* UIViewController+Extensnion.swift */,
+				752F094E26C805F900D9DA90 /* UIView + Extension.swift */,
+				752F097326C99ADC00D9DA90 /* UIIMageView + Extension.swift */,
+				752F095326C80E3100D9DA90 /* Font.swift */,
+				752F095D26C8232000D9DA90 /* Constant.swift */,
+				752F095826C816E500D9DA90 /* Theme.swift */,
+				7597E21026C799A200284174 /* ListingScreenAPIWorker.swift */,
+				7597E21526C799B200284174 /* Helper.swift */,
+				7597E21A26C7A2D300284174 /* SDwebImageHelper.swift */,
+				7597E1EF26C7906300284174 /* Product.swift */,
+				7597E1FC26C7950F00284174 /* ListingVIewModel.swift */,
+				7597E20626C7983800284174 /* ProductInfoCell.swift */,
+				7597E20B26C7987000284174 /* ProductInfoCell.xib */,
+				7597E1F726C7911700284174 /* ProductViewModel.swift */,
+				751EFEA026C6ED7D00EB165A /* CartScreenViewController.swift */,
+				7597E20126C7952200284174 /* CartViewModel.swift */,
+				751EFEA526C6EE8A00EB165A /* CheckoutScreenViewController.swift */,
+				751EFEAA26C6F22B00EB165A /* PaymentSuccessViewController.swift */,
 				751EFE6626C6C48200EB165A /* Main.storyboard */,
 				751EFE6926C6C48400EB165A /* Assets.xcassets */,
 				751EFE6B26C6C48400EB165A /* LaunchScreen.storyboard */,
@@ -128,6 +225,15 @@
 			path = ZivameUITests;
 			sourceTree = "<group>";
 		};
+		752F097226C9999B00D9DA90 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				752F096226C9565400D9DA90 /* AvenirLTStd-Book.ttf */,
+				751EFE9626C6E64F00EB165A /* products.json */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +241,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 751EFE8726C6C48500EB165A /* Build configuration list for PBXNativeTarget "Zivame" */;
 			buildPhases = (
+				BA57EDA4F94B017FAAF54E08 /* [CP] Check Pods Manifest.lock */,
 				751EFE5926C6C48200EB165A /* Sources */,
 				751EFE5A26C6C48200EB165A /* Frameworks */,
 				751EFE5B26C6C48200EB165A /* Resources */,
+				46CB56BF2C82421E093BF5C2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -233,7 +341,10 @@
 			files = (
 				751EFE6D26C6C48400EB165A /* LaunchScreen.storyboard in Resources */,
 				751EFE6A26C6C48400EB165A /* Assets.xcassets in Resources */,
+				7597E20C26C7987000284174 /* ProductInfoCell.xib in Resources */,
 				751EFE6826C6C48200EB165A /* Main.storyboard in Resources */,
+				752F096326C9565400D9DA90 /* AvenirLTStd-Book.ttf in Resources */,
+				751EFE9726C6E64F00EB165A /* products.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +364,77 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46CB56BF2C82421E093BF5C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zivame/Pods-Zivame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zivame/Pods-Zivame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zivame/Pods-Zivame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA57EDA4F94B017FAAF54E08 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zivame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		751EFE5926C6C48200EB165A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751EFEA626C6EE8A00EB165A /* CheckoutScreenViewController.swift in Sources */,
+				7597E21626C799B200284174 /* Helper.swift in Sources */,
+				7597E21126C799A200284174 /* ListingScreenAPIWorker.swift in Sources */,
+				7597E20726C7983800284174 /* ProductInfoCell.swift in Sources */,
+				752F095426C80E3100D9DA90 /* Font.swift in Sources */,
+				7597E1FD26C7950F00284174 /* ListingVIewModel.swift in Sources */,
+				752F098226CA1C0300D9DA90 /* NoInternetViewController.swift in Sources */,
 				751EFE6526C6C48200EB165A /* ViewController.swift in Sources */,
 				751EFE6126C6C48200EB165A /* AppDelegate.swift in Sources */,
 				751EFE6326C6C48200EB165A /* SceneDelegate.swift in Sources */,
+				752F094F26C805F900D9DA90 /* UIView + Extension.swift in Sources */,
+				751EFE9C26C6ED5F00EB165A /* ListingScreenViewController.swift in Sources */,
+				7597E1F826C7911700284174 /* ProductViewModel.swift in Sources */,
+				752F097426C99ADC00D9DA90 /* UIIMageView + Extension.swift in Sources */,
+				7597E1F026C7906300284174 /* Product.swift in Sources */,
+				751EFEAB26C6F22B00EB165A /* PaymentSuccessViewController.swift in Sources */,
+				752F097D26C9FE6B00D9DA90 /* Reachability.swift in Sources */,
+				752F095E26C8232000D9DA90 /* Constant.swift in Sources */,
+				7597E21B26C7A2D300284174 /* SDwebImageHelper.swift in Sources */,
+				752F094426C8056800D9DA90 /* UIViewController+Extensnion.swift in Sources */,
+				7597E22526C7AEE000284174 /* BaseViewController.swift in Sources */,
+				752F095926C816E500D9DA90 /* Theme.swift in Sources */,
+				751EFEA126C6ED7D00EB165A /* CartScreenViewController.swift in Sources */,
+				7597E20226C7952200284174 /* CartViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,12 +607,14 @@
 		};
 		751EFE8826C6C48500EB165A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B8638914AFCAD9BBEC83C54 /* Pods-Zivame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N5Q824RN3A;
 				INFOPLIST_FILE = Zivame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,12 +628,14 @@
 		};
 		751EFE8926C6C48500EB165A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68BE6CFA92CFA5914DC2C811 /* Pods-Zivame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N5Q824RN3A;
 				INFOPLIST_FILE = Zivame/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
