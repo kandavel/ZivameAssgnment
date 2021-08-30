@@ -1,22 +1,30 @@
 PODS:
   - Cosmos (23.0.0)
+  - lottie-ios (3.2.3)
   - SDWebImage (3.8.3):
     - SDWebImage/Core (= 3.8.3)
   - SDWebImage/Core (3.8.3)
+  - UIView-Shimmer (1.0.4)
 
 DEPENDENCIES:
   - Cosmos (~> 23.0)
+  - lottie-ios
   - SDWebImage (~> 3.8.3)
+  - UIView-Shimmer (~> 1.0)
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
     - Cosmos
+    - lottie-ios
     - SDWebImage
+    - UIView-Shimmer
 
 SPEC CHECKSUMS:
   Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
+  lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
+  UIView-Shimmer: ff0a32c73d67c7dbdea3d9e530538b10d18aea56
 
-PODFILE CHECKSUM: a429a0f01fec5ad4eacfc2324ffd7f60c1ae969d
+PODFILE CHECKSUM: aaf029cdcdbb9c9ec8c8980bc58f77185130bb5f
 
 COCOAPODS: 1.10.1

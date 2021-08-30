@@ -22,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         _ = AppDelegate.callOnce
+        setAppCustomAppearance()
+        listenToInternetChanges()
         return true
     }
 
@@ -40,7 +42,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func setAppCustomAppearance() {
-        
+        UINavigationBar.appearance().tintColor = UIColor.Theme.top_nav_back
+        UINavigationBar.appearance().backgroundColor = UIColor.Theme.top_nav_backgroud
+        UINavigationBar.appearance().barTintColor = UIColor.Theme.top_nav_backgroud
+        UINavigationBar.appearance().barStyle = UIBarStyle.default
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor : UIColor.black,NSAttributedString.Key.font: UIFont.Avenir.Black.A2 ]
+        UINavigationBar.appearance().isTranslucent = false
     }
     
     func refreshInternetReachability(){
@@ -72,7 +79,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     objc_sync_exit(self)
                     DispatchQueue.main.async {
                         let nc = NotificationCenter.default
-                        nc.post(name: Notification.Name(rawValue: NNNOWConstant.Notifications.ReachabilityChanged), object: nil, userInfo: ["IsInternet" : true])
+                        nc.post(name: Notification.Name(rawValue:Notifications.ReachabilityChanged), object: nil, userInfo: ["IsInternet" : true])
                         if reachability.isReachableViaWiFi {
                             print("Reachable via WiFi")
                         } else {
@@ -94,7 +101,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     objc_sync_exit(self)
                     
                     let nc = NotificationCenter.default
-                    nc.post(name: Notification.Name(rawValue: NNNOWConstant.Notifications.ReachabilityChanged), object: nil, userInfo: ["IsInternet" : false])
+                    nc.post(name: Notification.Name(rawValue: Notifications.ReachabilityChanged), object: nil, userInfo: ["IsInternet" : false])
                     DispatchQueue.main.async {
                         if let rootViewController = UIViewController.getTopViewController(){
                             if let noInternetVc = NoInternetViewController.getNoInternetController(){
