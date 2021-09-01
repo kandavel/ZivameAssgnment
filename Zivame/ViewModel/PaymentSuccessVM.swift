@@ -21,6 +21,14 @@ class PaymentSuccessVM {
         return UIColor.Theme.primary_interaction_colour
     }
     
+    func gettitle() -> String {
+        return "Order Placed"
+    }
+    
+    func deleteDB() {
+        PersistantManager.shareInstance.deleteProductsInbag()
+    }
+    
     
     func getButtonTitleAttaributedtext() -> NSAttributedString {
         let attribute  = [NSAttributedString.Key.foregroundColor: UIColor.Theme.top_nav_text , NSAttributedString.Key.font: UIFont.Avenir.Black.A7]

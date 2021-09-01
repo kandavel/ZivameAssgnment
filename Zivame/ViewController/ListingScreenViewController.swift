@@ -23,11 +23,17 @@ class ListingScreenViewController: BaseviewController  {
         return .default
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        updateBadgeCount()
+    }
+    
     func intializeUI() {
+        self.title  =  listingVM.getTitle()
         setTableViewMethods()
         addBagButton()
-        updateBadgeCount()
         listingVM.prepareData(delegate: self)
+        updateBadgeCount()
     }
     
     func setTableViewMethods() {
@@ -36,6 +42,7 @@ class ListingScreenViewController: BaseviewController  {
         self.tableView.sectionHeaderHeight = listingVM.getTableViewEstimatedSectionHeaderHeight()
         self.tableView.estimatedRowHeight = listingVM.getTableViewEstimatedRowHeight()
         self.tableView.registerCell(cellName: String(describing: ProductInfoCell.self))
+        self.tableView.refreshControl  = refreshControl
         self.tableView.dataSource  = self
         self.tableView.delegate  =  self
         self.tableView.separatorStyle = .none
@@ -49,14 +56,19 @@ class ListingScreenViewController: BaseviewController  {
     }
     
     @objc func openCartScreen(){
-        let cartVC  = CartViewController.openCartViewController()
-        self.present(UINavigationController(rootViewController: cartVC), animated: true, completion: nil)
+        if !(listingVM.checkForBagCountisEmpty()){
+            let cartVC  = CartViewController.openCartViewController()
+            self.present(UINavigationController(rootViewController: cartVC), animated: true, completion: nil)
+        }
+        else {
+            self.showAlert(self, message: self.listingVM.getBagCountMessage())
+        }
     }
     
     
     
     func updateBadgeCount() {
-        self.navigationItem.rightBarButtonItem?.addBadge(number:  listingVM.getBagCount(), withOffset: CGPoint(x:22 ,y: 0), andColor: UIColor.Theme.top_nav_text, andFilled: false)
+        self.navigationItem.rightBarButtonItem?.addBadge(number:  listingVM.getBagCount(), withOffset: CGPoint(x: -13 ,y: 0), andColor: UIColor.Theme.top_nav_text, andFilled: false)
     }
     
     override func pullToRefreshUI() {
@@ -108,6 +120,8 @@ extension ListingScreenViewController : UITableViewDataSource,UITableViewDelegat
         let addAction = UIContextualAction(style: .normal, title: "Add", handler: { [weak self] (action, view, success) in
             self?.listingVM.addProductToBag(indexPath: indexPath)
             self?.updateBadgeCount()
+            success(true)
+            self?.showAlert(self ?? UIViewController(), message: self?.listingVM.getAlertMessage() ?? emptyString)
             //self?.showAlert(self ?? )
         })
         addAction.backgroundColor = .blue

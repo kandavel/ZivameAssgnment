@@ -18,18 +18,22 @@ class PaymentSucessViewController: BaseviewController {
     //MARK:IbOutlet
     @IBOutlet weak var continueShoppingButton: UIButton!
     @IBOutlet weak var orderPlacedView: UIView!
-    @IBOutlet weak var loaderView: LottieView!
+    @IBOutlet weak var loaderView: UIView!
     //MARK:Variable
     let paymentSuccessVM  = PaymentSuccessVM()
     weak var dismissScreenDelegate : DismissDelegate? = nil
+    private var animationView: AnimationView?
+    fileprivate var timer: Timer? = nil //Timer used to track keyboard stroke fro n seconds
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setAnimation()
         setUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setTimer()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -40,7 +44,32 @@ class PaymentSucessViewController: BaseviewController {
         super.pullToRefreshUI()
     }
     
+    func setAnimation() {
+        self.orderPlacedView.addlottieAnimation(name: "orderPlaced", parentView:  self.orderPlacedView)
+        self.orderPlacedView.isHidden = true
+        self.loaderView.addlottieAnimation(name: "paymentSuccessful", parentView: self.loaderView)
+        loaderView .isHidden = false
+      // self.view.bringSubviewToFront(loaderView)
+    }
+    
+    fileprivate func setTimer() {
+        weak var weakSelf = self
+        weakSelf?.timer?.invalidate()
+        weakSelf?.timer = nil
+        weakSelf?.timer = Timer.scheduledTimer(timeInterval:  3.0, target: weakSelf ?? self, selector: #selector(showOrderView), userInfo: nil, repeats: false)
+    }
+    
+    @objc func showOrderView() {
+        continueShoppingButton.isHidden  = false
+        loaderView .isHidden = true
+        self.orderPlacedView.isHidden = false
+       // self.view.bringSubviewToFront(orderPlacedView)
+    }
+    
+    
+    
     func setUI() {
+        self.title  =  paymentSuccessVM.gettitle()
         continueShoppingButton.isHidden  = true
         self.view.bringSubviewToFront(continueShoppingButton)
         continueShoppingButton.backgroundColor = paymentSuccessVM.getPrimaryColor()
@@ -60,6 +89,8 @@ class PaymentSucessViewController: BaseviewController {
     }
     
     @objc func navigateToListingScreen() {
+        dismissScreen()
+        self.paymentSuccessVM.deleteDB()
         self.dismissScreenDelegate?.dismissscreen()
     }
     

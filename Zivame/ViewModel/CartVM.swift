@@ -30,6 +30,14 @@ class CartViewModel {
     var cartlist  : [ProductElement] = []
     
     
+    func getTitle() -> String {
+        return "Kandavel's Bag"
+    }
+    
+    func showAlertMessage() -> String {
+        return "Please add items to bag"
+    }
+    
     func getCellIdentifier() -> String {
         return String(describing : ProductInfoCell.self)
     }
@@ -86,6 +94,9 @@ class CartViewModel {
         return cartlist.count
     }
     
+    func checkForCartCount() -> Bool {
+        return getCartListCount() == 0 ? true : false
+    }
     
     
     fileprivate func getProductFromDB(styleId : String) -> ProductInfo? {
@@ -102,8 +113,9 @@ class CartViewModel {
     }
     
     func increaseProductCount(styleId : String) {
+        let productCount  = self.cartlist.filter {$0.uniqueId == styleId}.first?.count ?? 0
         if let count = checkForProductCount(styleId: styleId) {
-            if count > 1 && count <= 4 {
+            if count >= 1 && productCount < 5 {
                 if let product =  getProductfromStyleId(styleId: styleId) {
                     PersistantManager.shareInstance.addItemToDB(product: product)
                 }
@@ -124,14 +136,13 @@ class CartViewModel {
     
     func decreaseProductCount(styleId : String) {
         if let count = checkForProductCount(styleId: styleId) {
-            if count >= 1 && count <= 4 {
+            if count >= 1  {
                 if let product =  getProductfromStyleId(styleId: styleId) {
-                    product.count  =  product.count - 1
                     PersistantManager.shareInstance.addItemToDB(product: product,isDecdreasequantity: true)
                 }
             }
             else {
-                PersistantManager.shareInstance.deleteProductsInbag()
+                PersistantManager.shareInstance.deleteProductFromDB(styleId: styleId)
             }
         }
         refereshData()
@@ -149,7 +160,7 @@ class CartViewModel {
     
     
     fileprivate func convertDBModelToProductElement(_ productInfo: ProductInfo) -> ProductElement {
-        let price  =  "\(String(describing: productInfo.price))"
+        let price  =  productInfo.price?.description ?? emptyString
         let productElement  = ProductElement(name: productInfo.name, price: price, imageURL: productInfo.imageUrl, rating: Int(productInfo.rating ?? "0"))
         productElement.uniqueId  = productInfo.id
         productElement.count  = Int(productInfo.quantity)

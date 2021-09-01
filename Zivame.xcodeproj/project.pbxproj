@@ -27,6 +27,8 @@
 		752F097D26C9FE6B00D9DA90 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F097C26C9FE6A00D9DA90 /* Reachability.swift */; };
 		752F098226CA1C0300D9DA90 /* NoInternetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752F098126CA1C0300D9DA90 /* NoInternetViewController.swift */; };
 		753E2B2926CD9680001D7DBF /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 753E2B2826CD9680001D7DBF /* UIColor + Extension.swift */; };
+		75974FFC26DFACA6006AB8EB /* XCTestCase + JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75974FFB26DFACA6006AB8EB /* XCTestCase + JSON.swift */; };
+		7597501126DFD382006AB8EB /* PersistantTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597501026DFD382006AB8EB /* PersistantTest.swift */; };
 		7597E1F026C7906300284174 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E1EF26C7906300284174 /* Product.swift */; };
 		7597E1FD26C7950F00284174 /* ListingVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E1FC26C7950F00284174 /* ListingVIewModel.swift */; };
 		7597E20726C7983800284174 /* ProductInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7597E20626C7983800284174 /* ProductInfoCell.swift */; };
@@ -41,6 +43,9 @@
 		75A048F926CADD200082CFAF /* PaymentSucessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A048F826CADD200082CFAF /* PaymentSucessViewController.swift */; };
 		75A048FF26CAE1790082CFAF /* zivame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 75A048FD26CAE1790082CFAF /* zivame.xcdatamodeld */; };
 		75A0490426CAE3A50082CFAF /* PersistantManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75A0490326CAE3A50082CFAF /* PersistantManager.swift */; };
+		75A40F2326DF45D6003A268A /* rocket.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A40F2226DF45D5003A268A /* rocket.json */; };
+		75A40F2826DF586A003A268A /* paymentSuccessful.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A40F2726DF586A003A268A /* paymentSuccessful.json */; };
+		75A40F2D26DF5F3A003A268A /* orderPlaced.json in Resources */ = {isa = PBXBuildFile; fileRef = 75A40F2C26DF5F3A003A268A /* orderPlaced.json */; };
 		75ABF6C726D42AE9009B51E1 /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75ABF6C626D42AE9009B51E1 /* UIButton + Extension.swift */; };
 		75B6DE8E26D9683D00727294 /* PaymentSuccessVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6DE8D26D9683D00727294 /* PaymentSuccessVM.swift */; };
 		75B6DE9326DA665F00727294 /* ZivameAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B6DE9226DA665F00727294 /* ZivameAlertController.swift */; };
@@ -94,6 +99,8 @@
 		752F097C26C9FE6A00D9DA90 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		752F098126CA1C0300D9DA90 /* NoInternetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoInternetViewController.swift; sourceTree = "<group>"; };
 		753E2B2826CD9680001D7DBF /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		75974FFB26DFACA6006AB8EB /* XCTestCase + JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase + JSON.swift"; sourceTree = "<group>"; };
+		7597501026DFD382006AB8EB /* PersistantTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantTest.swift; sourceTree = "<group>"; };
 		7597E1EF26C7906300284174 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		7597E1FC26C7950F00284174 /* ListingVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingVIewModel.swift; sourceTree = "<group>"; };
 		7597E20626C7983800284174 /* ProductInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductInfoCell.swift; sourceTree = "<group>"; };
@@ -108,6 +115,9 @@
 		75A048F826CADD200082CFAF /* PaymentSucessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSucessViewController.swift; sourceTree = "<group>"; };
 		75A048FE26CAE1790082CFAF /* zivame.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = zivame.xcdatamodel; sourceTree = "<group>"; };
 		75A0490326CAE3A50082CFAF /* PersistantManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistantManager.swift; sourceTree = "<group>"; };
+		75A40F2226DF45D5003A268A /* rocket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rocket.json; sourceTree = "<group>"; };
+		75A40F2726DF586A003A268A /* paymentSuccessful.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = paymentSuccessful.json; sourceTree = "<group>"; };
+		75A40F2C26DF5F3A003A268A /* orderPlaced.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = orderPlaced.json; sourceTree = "<group>"; };
 		75ABF6C626D42AE9009B51E1 /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		75B6DE8D26D9683D00727294 /* PaymentSuccessVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentSuccessVM.swift; sourceTree = "<group>"; };
 		75B6DE9226DA665F00727294 /* ZivameAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZivameAlertController.swift; sourceTree = "<group>"; };
@@ -202,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				751EFE7726C6C48500EB165A /* ZivameTests.swift */,
+				7597501026DFD382006AB8EB /* PersistantTest.swift */,
+				75974FFB26DFACA6006AB8EB /* XCTestCase + JSON.swift */,
 				751EFE7926C6C48500EB165A /* Info.plist */,
 			);
 			path = ZivameTests;
@@ -225,6 +237,9 @@
 				752F095826C816E500D9DA90 /* Theme.swift */,
 				752F095326C80E3100D9DA90 /* Font.swift */,
 				752F096226C9565400D9DA90 /* AvenirLTStd-Book.ttf */,
+				75A40F2726DF586A003A268A /* paymentSuccessful.json */,
+				75A40F2C26DF5F3A003A268A /* orderPlaced.json */,
+				75A40F2226DF45D5003A268A /* rocket.json */,
 				751EFE9626C6E64F00EB165A /* products.json */,
 			);
 			path = Utils;
@@ -433,8 +448,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				751EFE6D26C6C48400EB165A /* LaunchScreen.storyboard in Resources */,
+				75A40F2D26DF5F3A003A268A /* orderPlaced.json in Resources */,
 				751EFE6A26C6C48400EB165A /* Assets.xcassets in Resources */,
 				7597E20C26C7987000284174 /* ProductInfoCell.xib in Resources */,
+				75A40F2326DF45D6003A268A /* rocket.json in Resources */,
+				75A40F2826DF586A003A268A /* paymentSuccessful.json in Resources */,
 				751EFE6826C6C48200EB165A /* Main.storyboard in Resources */,
 				752F096326C9565400D9DA90 /* AvenirLTStd-Book.ttf in Resources */,
 				751EFE9726C6E64F00EB165A /* products.json in Resources */,
@@ -542,6 +560,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7597501126DFD382006AB8EB /* PersistantTest.swift in Sources */,
+				75974FFC26DFACA6006AB8EB /* XCTestCase + JSON.swift in Sources */,
 				751EFE7826C6C48500EB165A /* ZivameTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

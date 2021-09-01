@@ -76,6 +76,11 @@ class PersistantManager {
     
     struct Entity {
         static let Product = "ProductInfo"
+        
+    }
+    
+    struct Key {
+        static let Quantity  = "quantity"
     }
     
     //  MARK: - COMMON HELPERS
@@ -136,16 +141,24 @@ class PersistantManager {
         productInfo.price =  NSDecimalNumber(string: product.price)
         productInfo.rating =  String(product.rating ?? 0)
         productInfo.date  = Date()
-        productInfo.quantity = Int32(count)
+        productInfo.quantity = Float(count)
         save()
     }
     
     func addItemToDB(product : ProductElement,isDecdreasequantity : Bool = false) {
         if let productInfoList  = checkProductIsAddedInDB(product: product),productInfoList.count > 0 {
-            deleteManagedObject(Entity.Product, predicate: NSPredicate(format: "id == %@",product.uniqueId.optionalValue))
+           // deleteManagedObject(Entity.Product, predicate: NSPredicate(format: "id == %@",product.uniqueId.optionalValue))
+            print(productInfoList.count)
             if let productInfo  = productInfoList.first {
-                let count = isDecdreasequantity ? productInfoList.count : productInfoList.count +  1
-                addProduct(productInfo : productInfo,product : product, count: count)
+                let count = isDecdreasequantity ? productInfo.quantity - 1 :  productInfo.quantity +  1
+                if count == 0 {
+                    deleteProductFromDB(styleId: product.uniqueId.optionalValue)
+                }
+                else {
+                    productInfo.setValue(Float(count), forKey: Key.Quantity)
+                }
+                save()
+               // addProduct(productInfo : productInfo,product : product, count: count)
             }
         }
         else {
@@ -157,7 +170,12 @@ class PersistantManager {
     }
     
     func deleteProductsInbag() {
+        setBagCount(count: 0)
         deleteManagedObject(Entity.Product)
+    }
+    
+    func deleteProductFromDB(styleId : String) {
+        deleteManagedObject(Entity.Product, predicate: NSPredicate(format: "id == %@",styleId))
     }
     
     

@@ -7,14 +7,20 @@
 
 import Foundation
 import UIKit
+import Lottie
+
 class CartViewController: BaseviewController {
     //MARK:IbOutlet
     @IBOutlet weak var tableview : UITableView!
     @IBOutlet weak var placeOrderButton : UIButton!
     @IBOutlet weak var emptyView : UIView!
     @IBOutlet weak var emptyPlaceHolderLabel: UILabel!
+    @IBOutlet weak var lottieView: UIView!
     //MARK:Variable
     let cartVM = CartViewModel()
+    private var animationView: AnimationView?
+    fileprivate var timer: Timer? = nil //Timer used to track keyboard stroke fro n seconds
+    
     weak var dismissDelegate : DismissDelegate? = nil
     
     override func viewDidLoad() {
@@ -37,7 +43,19 @@ class CartViewController: BaseviewController {
         super.pullToRefreshUI()
     }
     
+    func setUpLottieView() {
+        animationView = .init(name: "rocket")
+        animationView?.frame  = lottieView.frame
+        animationView!.contentMode = .scaleAspectFit
+        animationView!.loopMode = .loop
+        animationView!.animationSpeed = 0.5
+        lottieView.addSubview(animationView!)
+        lottieView .isHidden = true
+        animationView!.play()
+    }
+    
     func setUI() {
+        self.title  =  cartVM.getTitle()
         emptyView.isHidden = true
         self.view.bringSubviewToFront(placeOrderButton)
         emptyPlaceHolderLabel.attributedText  = cartVM.getPlaceHolderLabelText()
@@ -46,6 +64,14 @@ class CartViewController: BaseviewController {
         placeOrderButton.addTarget(self, action: #selector(openOrderSucessScreen), for: .touchUpInside)
         setRoundedButton()
         addCloseButton()
+        setUpLottieView()
+    }
+    
+    fileprivate func setTimer() {
+        weak var weakSelf = self
+        weakSelf?.timer?.invalidate()
+        weakSelf?.timer = nil
+        weakSelf?.timer = Timer.scheduledTimer(timeInterval:  3.0, target: weakSelf ?? self, selector: #selector(navigateToOrderSuccessScreen), userInfo: nil, repeats: false)
     }
     
     func addCloseButton() {
@@ -57,9 +83,20 @@ class CartViewController: BaseviewController {
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     
-    @objc func openOrderSucessScreen() {
+    @objc func navigateToOrderSuccessScreen() {
         let vc  = PaymentSucessViewController.openPaymentSuccessScreen(delegate: self)
         self.present(UINavigationController(rootViewController: vc), animated: true, completion: nil)
+    }
+    
+    @objc func openOrderSucessScreen() {
+        if !(self.cartVM.checkForCartCount()) {
+            lottieView.isHidden = false
+            self.view.bringSubviewToFront(lottieView)
+            setTimer()
+        }
+        else {
+            self.showAlert(self, message: self.cartVM.showAlertMessage())
+        }
     }
     
     func setRoundedButton()  {
@@ -108,6 +145,7 @@ extension CartViewController : UITableViewDataSource,UITableViewDelegate {
 
 extension CartViewController : DismissDelegate {
     func dismissscreen() {
+        self.lottieView.isHidden = false
         self.navigationController?.dismiss(animated: true, completion: nil)
     }
     

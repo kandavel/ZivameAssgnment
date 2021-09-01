@@ -137,11 +137,6 @@
             <point key="canvasLocation" x="-583" y="23"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="qdN-B2-NNb">
-            <size key="intrinsicContentSize" width="120" height="20"/>
-        </designable>
-    </designables>
     <resources>
         <image name="minus 2" width="18" height="18"/>
         <image name="plus " width="18" height="18"/>

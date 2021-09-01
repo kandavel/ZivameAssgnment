@@ -7,20 +7,47 @@
 
 import XCTest
 @testable import Zivame
+@testable import Zivame
 
 class ZivameTests: XCTestCase {
+    
+    var productresponse : Product!
+    var productList : [ProductElement]!
+    var productPriceRangeList : [ProductPriceRange]!
+    var listingVM  = ListingViewModel()
 
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        let data = try getData(fromJSON: "products")
+        productresponse = try JSONDecoder().decode(Product.self, from: data)
+        productList = productresponse.products
+        productList =  listingVM.sortArrayList(list: productList)
+        productPriceRangeList =  listingVM.groupProductListIntoPriceRange(list: productList)
     }
+    
+    
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        try super.tearDownWithError()
+        productList =  nil
+    }
+    
+    func testListCount() throws {
+        print(productList.isEmpty)
+        
+        XCTAssertTrue(!(productList.isEmpty), "List is not empty")
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testSortIsHappened()  throws {
+        let first  = Int(self.productList.first?.uniqueId ?? "0")!
+        let last   = Int(self.productList.last?.uniqueId ?? "0")!
+         XCTAssertLessThan(first,last)
+    }
+    
+    func testProductPriceRangeList() throws {
+        let priceRangeMinimum  = productPriceRangeList.first?.priceRange!
+        let priceRangeMaximum  = productPriceRangeList.last?.priceRange!
+        XCTAssertEqual(priceRangeMinimum == "PriceRange below Rs.1000", priceRangeMaximum == "PriceRange above Rs.1000")
     }
 
     func testPerformanceExample() throws {
@@ -29,5 +56,7 @@ class ZivameTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    
 
 }

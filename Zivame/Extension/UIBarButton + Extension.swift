@@ -29,7 +29,8 @@ extension UIBarButtonItem {
         view.layer.addSublayer(badge)
         // Initialiaze Badge's label
         let label = CATextLayer()
-        label.string = "\(number)"
+        let badgeCount  =  number == 0 ? "" : "\(number)"
+        label.string = badgeCount
         label.alignmentMode = CATextLayerAlignmentMode.center
         label.fontSize = 12
         label.font = "Avenir-Heavy" as CFTypeRef?

@@ -24,7 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         _ = AppDelegate.callOnce
         setAppCustomAppearance()
         listenToInternetChanges()
+        print(applicationDirectoryPath())
         return true
+    }
+    func applicationDirectoryPath() -> String {
+            return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String
     }
 
     // MARK: UISceneSession Lifecycle

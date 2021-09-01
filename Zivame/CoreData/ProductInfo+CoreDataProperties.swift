@@ -21,7 +21,7 @@ extension ProductInfo {
     @NSManaged public var imageUrl: String?
     @NSManaged public var name: String?
     @NSManaged public var price: NSDecimalNumber?
-    @NSManaged public var quantity: Int32
+    @NSManaged public var quantity: Float
     @NSManaged public var rating: String?
     @NSManaged public var date:Date?
 

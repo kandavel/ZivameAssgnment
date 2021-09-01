@@ -7,6 +7,8 @@
 
 import Foundation
 import UIKit
+import Lottie
+
 extension UIView {
     
     func addConstraintWithSuperView(_ toSuperView : UIView,leadingSpace : CGFloat,trailingSpace : CGFloat,topSpace : CGFloat,bottomSpace : CGFloat){
@@ -66,6 +68,17 @@ extension UIView {
         if let  activityIndicator = self.viewWithTag(12345) as? UIActivityIndicatorView{
             activityIndicator.removeFromSuperview()
         }
+    }
+    
+    func addlottieAnimation(name : String,parentView : UIView) {
+        let animationView = AnimationView.init(name: name)
+        animationView.frame  = parentView.frame
+        parentView.center  = animationView.center
+        animationView.contentMode = .scaleAspectFit
+        animationView.loopMode = .loop
+        animationView.animationSpeed = 0.5
+        parentView.addSubview(animationView)
+        animationView.play()
     }
     
     

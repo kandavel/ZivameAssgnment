@@ -12,10 +12,11 @@ class BaseviewController: UIViewController {
     
     var navigationBarBackgroundColor : UIColor? = UIColor.Theme.top_nav_backgroud
     var shwNavBarShadow: Bool = false
+    var isLoaded = false
     
     
     ///Refershing control for refreshing in pull to refresh feature
-   lazy var refreshControl: UIRefreshControl = {
+    lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.tintColor = UIColor.Theme.primary_interaction_colour
         refreshControl.addTarget(self, action: #selector(pullToRefreshUI), for: .valueChanged)
@@ -36,6 +37,8 @@ class BaseviewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        let nc = NotificationCenter.default
+        nc.addObserver(self, selector: #selector(rechabilityChanged), name: NSNotification.Name(rawValue: Notifications.ReachabilityChanged), object: nil)
         setNavigationBarSettings()
     }
     
@@ -44,13 +47,33 @@ class BaseviewController: UIViewController {
         
     }
     
+    //MARK:- Internet Reachablity
+    @objc func rechabilityChanged(_ notification: Notification){
+        if let userInfo : [String:Bool] = notification.userInfo as? [String:Bool]{
+            //IsInternet
+            if let isInternet = userInfo["IsInternet"]{
+                
+                if isInternet == true  && isLoaded == false {
+                    self.internetReachableAndRefresh()
+                }
+                else if isInternet == false{
+                    self.internetNotRechable()
+                }
+            }
+        }
+    }
+    
     func setUpNavigationStack() {
         
     }
     
     func internetReachableAndRefresh(){
-        
     }
+    
+    func internetNotRechable(){
+    }
+    
+    
     
     func setNavigationBarSettings() {
         if self.navigationBarBackgroundColor == UIColor.clear {

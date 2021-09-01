@@ -22,10 +22,13 @@ class ListingViewModel {
     let minimumPriceRange  = 1000
     
     
+    
     struct Constant {
        static let lowerPriceRangeText  = "PriceRange below Rs.1000"
        static let higherPriceRangeText  = "PriceRange above Rs.1000"
        static let  message  = "Added To Bag"
+       static let title  = "Gadgets"
+       static let alertMessage  = "Please add items to bag"
     }
     
     init() {
@@ -63,6 +66,18 @@ class ListingViewModel {
     
     func isHideButton() -> Bool {
         return true
+    }
+    
+    func getAlertMessage() -> String {
+        return Constant.message
+    }
+    
+    func getBagCountMessage() -> String {
+        return Constant.alertMessage
+    }
+    
+    func getTitle() -> String {
+        return Constant.title
     }
     
     /// Get TableView row section height
@@ -151,6 +166,10 @@ class ListingViewModel {
     
     func getBagCount() -> Int {
         return PersistantManager.shareInstance.getBagCount() ?? 0
+    }
+    
+    func checkForBagCountisEmpty() -> Bool {
+        return getBagCount() == 0 ? true : false
     }
     
     func addProductToBag(indexPath : IndexPath) {
